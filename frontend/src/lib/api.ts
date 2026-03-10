@@ -14,7 +14,14 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://armatrix-backen
 
 export async function getTeamMembers(): Promise<TeamMember[]> {
     try {
-        const res = await fetch(`${API_BASE_URL}/api/team`);
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 4000); // 4-second timeout so we don't wait for Render cold starts
+
+        const res = await fetch(`${API_BASE_URL}/api/team`, {
+            signal: controller.signal
+        });
+
+        clearTimeout(timeoutId);
 
         if (!res.ok) {
             throw new Error('Failed to fetch team data');
@@ -22,6 +29,7 @@ export async function getTeamMembers(): Promise<TeamMember[]> {
 
         return await res.json();
     } catch (error) {
+        console.warn("Backend fetch failed or timed out, falling back to mock data:", error);
         // Fallback to static mock data if the backend is completely unreachable
         return [
             { id: 1, name: "Prateesh Awasthi", role: "Co-Founder", bio: "", photo_url: "/Images/co-founders/Screenshot 2026-03-09 192646.png", linkedin_url: "https://www.linkedin.com/in/prateesh-awasthi-4a5215109/", category: "co-founders" },
