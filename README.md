@@ -2,16 +2,16 @@
 
 A full-stack implementation of the Armatrix team page and contact page. Designed with a premium deep-tech robotics aesthetic using Next.js 15, Tailwind CSS, and FastAPI.
 
-## 🚀 Live Demo
-- **Frontend Live URL**: [Link to Deployed Frontend]
-- **Backend Live URL**: [Link to Deployed Backend]
+##  Live Demo
+- **Frontend Live URL**: [https://armatrix-team-page.vercel.app/]
+- **Backend Live URL**: [https://armatrix-backend.onrender.com/]
 
 ## 🛠️ Repository
-- **GitHub Repo**: [Link to GitHub Repository] (Monorepo)
+- **GitHub Repo**: [https://github.com/anudeep0011/Armatrix-Team-Page] (Monorepo)
 
 ---
 
-## 🎨 Design Decisions
+##  Design Decisions
 
 1. **Aesthetic & Theme**
    - Implemented a sleek, deep-tech minimalism matching the Armatrix brand.
@@ -42,7 +42,7 @@ A full-stack implementation of the Armatrix team page and contact page. Designed
 
 ---
 
-## 💻 Setup Instructions
+## Setup Instructions
 
 ### 1. Backend Setup (FastAPI)
 
@@ -73,6 +73,6 @@ The Next.js application will start on `http://localhost:3000`. Open your browser
 
 ---
 
-## 📝 Notes
+##  Notes
 - Static assets and imagery were processed and moved directly into `frontend/public/Images/` to ensure absolute pathing resolution across both local dev servers and edge-deployed environments.
 - The `TeamCard` layout uses a specialized property to dynamically shift between vertical stack and split-row modes depending on the organizational tier (Co-founders vs Engineering).
