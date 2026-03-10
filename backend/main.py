@@ -90,6 +90,16 @@ class TeamMember(TeamMemberBase):
         from_attributes = True
 
 # API Routes
+@app.get("/")
+def read_root():
+    return {
+        "message": "Welcome to the Armatrix Team API",
+        "status": "active",
+        "endpoints": {
+            "team": "/api/team"
+        }
+    }
+
 @app.get("/api/team", response_model=List[TeamMember])
 def get_team_members(db: sqlite3.Connection = Depends(get_db)):
     cursor = db.cursor()
