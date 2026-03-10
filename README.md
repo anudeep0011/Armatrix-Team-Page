@@ -38,7 +38,7 @@ A full-stack implementation of the Armatrix team page and contact page. Designed
 
 - **Frontend**: Next.js 15 (App Router), React, Tailwind CSS, Framer Motion, Lucide React
 - **Backend**: Python 3, FastAPI, SQLite (in-memory persistent via `team.db`), Pydantic
-- **Deployment Structure**: Monorepo capable of split deployments (e.g., Vercel for Frontend, Render/Railway for Backend).
+- **Deployment Structure**: Monorepo capable of split deployments (e.g., Vercel for Frontend, Render for Backend).
 
 ---
 
